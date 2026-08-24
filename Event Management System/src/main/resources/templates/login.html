@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Event Management System</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .admin-button {
+            background: #333;
+            color: white;
+        }
+
+        .user-button {
+            background: #ddd;
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Event Management System</h1>
+
+    <h2>User Login</h2>
+
+    <form action="/login" method="post">
+
+        <input type="text"
+               name="username"
+               placeholder="Username"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Password"
+               required>
+
+        <button class="user-button"
+                type="submit">
+
+            User Login
+
+        </button>
+
+    </form>
+
+    <p th:if="${error}"
+       th:text="${error}"
+       style="color:red;">
+    </p>
+
+
+    <a href="/register">
+        Don't have an account? Register
+    </a>
+
+
+    <hr>
+
+
+    <h3>Admin</h3>
+
+    <a href="/admin/login">
+
+        <button class="admin-button">
+
+            Admin Login
+
+        </button>
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

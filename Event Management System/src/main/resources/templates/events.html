@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Available Events</title>
+
+</head>
+
+<body>
+
+<h2>Available Events</h2>
+
+<p th:if="${message}"
+   th:text="${message}">
+</p>
+
+
+<table border="1">
+
+    <tr>
+
+        <th>Event Name</th>
+
+        <th>Date</th>
+
+        <th>Location</th>
+
+        <th>Details</th>
+
+        <th>Action</th>
+
+    </tr>
+
+
+    <tr th:each="event : ${events}">
+
+        <td th:text="${event.name}"></td>
+
+        <td th:text="${event.date}"></td>
+
+        <td th:text="${event.location}"></td>
+
+        <td th:text="${event.details}"></td>
+
+
+        <td>
+
+            <form th:action="@{/book/{id}(id=${event.id})}"
+                  method="post">
+
+                <button type="submit">
+
+                    Book Now
+
+                </button>
+
+            </form>
+
+        </td>
+
+    </tr>
+
+</table>
+
+
+<br>
+
+<a href="/logout">
+
+    Log Out
+
+</a>
+
+</body>
+
+</html>

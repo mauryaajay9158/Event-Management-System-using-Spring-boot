@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Create New Event</title>
+
+</head>
+
+<body>
+
+<h2>Create New Event</h2>
+
+
+<form action="/admin/create"
+      method="post">
+
+
+    <label>Event Name:</label>
+
+    <br>
+
+    <input type="text"
+           name="name"
+           required>
+
+
+    <br>
+    <br>
+
+
+    <label>Event Date:</label>
+
+    <br>
+
+    <input type="date"
+           name="date"
+           required>
+
+
+    <br>
+    <br>
+
+
+    <label>Event Location:</label>
+
+    <br>
+
+    <input type="text"
+           name="location"
+           required>
+
+
+    <br>
+    <br>
+
+
+    <label>Event Details:</label>
+
+    <br>
+
+    <textarea name="details"
+              rows="5"
+              cols="40"></textarea>
+
+
+    <br>
+    <br>
+
+
+    <button type="submit">
+
+        Create Event
+
+    </button>
+
+
+</form>
+
+
+<br>
+
+<a href="/admin">
+
+    Cancel
+
+</a>
+
+</body>
+
+</html>

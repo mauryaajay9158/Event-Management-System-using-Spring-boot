@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Admin Panel</title>
+
+</head>
+
+<body>
+
+<h2>Admin Panel</h2>
+
+<h3>Event Management</h3>
+
+
+<a href="/admin/create">
+
+    Create New Event
+
+</a>
+
+
+<br>
+<br>
+
+
+<table border="1">
+
+    <tr>
+
+        <th>Event Name</th>
+
+        <th>Date</th>
+
+        <th>Location</th>
+
+        <th>Details</th>
+
+        <th>Bookings</th>
+
+    </tr>
+
+
+    <tr th:each="event : ${events}">
+
+        <td th:text="${event.name}"></td>
+
+        <td th:text="${event.date}"></td>
+
+        <td th:text="${event.location}"></td>
+
+        <td th:text="${event.details}"></td>
+
+
+        <td>
+
+            <a th:href="@{/admin/event/{id}(id=${event.id})}">
+
+                View Users
+
+            </a>
+
+        </td>
+
+    </tr>
+
+</table>
+
+
+<br>
+
+<a href="/logout">
+
+    Log Out
+
+</a>
+
+</body>
+
+</html>

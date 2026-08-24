@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Admin Login</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Admin Login</h2>
+
+    <form action="/admin/login" method="post">
+
+        <input type="text"
+               name="username"
+               placeholder="Admin Username"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Admin Password"
+               required>
+
+        <button type="submit">
+
+            Login as Admin
+
+        </button>
+
+    </form>
+
+
+    <p th:if="${error}"
+       th:text="${error}"
+       style="color:red;">
+    </p>
+
+
+    <a href="/login">
+
+        Back to User Login
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
